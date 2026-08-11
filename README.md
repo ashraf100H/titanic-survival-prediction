@@ -114,7 +114,28 @@ Further improvements could include:
 - Tree-based models such as Random Forest or Gradient Boosting
 - Scikit-learn Pipelines
 
+##  Interactive Streamlit Application
+
+The project was extended with an interactive Streamlit application that allows users to enter passenger information and receive a survival prediction.
+
+The application:
+
+1. Accepts passenger information through an interactive form.
+2. Converts categorical inputs into the same encoding used during model training.
+3. Automatically calculates the `FamilySize` feature.
+4. Passes the processed data to the trained Logistic Regression model.
+5. Displays the predicted outcome and survival probabilities.
+6. Provides a simple coefficient-based explanation of which features influenced the prediction.
+
+The application can be launched locally with:
+
+```bash
+streamlit run app.py
+
+
 ## Project Structure
+
+And update your project structure to:
 
 ```text
 titanic-survival-prediction/
@@ -122,9 +143,17 @@ titanic-survival-prediction/
 ├── data/
 │   └── train.csv
 │
+├── model/
+│   └── titanic_model.pkl
+│
 ├── notebook/
 │   └── titanic_analysis.ipynb
 │
+├── app.py
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+
+
+ 
+
